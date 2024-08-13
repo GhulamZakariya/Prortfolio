@@ -52,6 +52,7 @@ dependencies:
       path: sand_simulation
       ref: 585f5237d5c5d1a25be9225b112ff94aa3710b40
   url_launcher: ^6.0.20
+  download_assets: ^3.2.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0

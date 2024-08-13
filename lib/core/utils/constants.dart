@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/core/utils/utils.dart';
@@ -16,10 +18,10 @@ double getMobileMaxWidth(BuildContext context) =>
 
 class AppConstants {
   static const linkedInUrl =
-      "https://www.linkedin.com/in/agnel-selvan-328421192/";
-  static const instagramUrl = "https://www.instagram.com/_agnel.selvan_/";
-  static const githubUrl = "https://github.com/AgnelSelvan";
-  static const mediumUrl = "https://medium.com/@agnelselvan";
+      "https://www.linkedin.com/in/ghulamzakariya-flutterdeveloper/";
+  static const instagramUrl = "https://www.instagram.com/khanzakariya22/";
+  static const githubUrl = "https://github.com/GhulamZakariya";
+  static const fiverrUrl = "https://www.fiverr.com/gzack22?public_mode=true";
 
   static const _assets = "assets/";
   static const _outputs = "outputs/";
@@ -27,15 +29,17 @@ class AppConstants {
   static const _svg = _assets + "svg/";
   static const guySvg = _svg + "guy.svg";
   static const personSvg = _svg + "person.svg";
+  static const fiverrSvg = _svg + "fiverr.svg";
 
   static const _images = _assets + "images/";
 
-//   static const _socialImages = _images + "social/";
+  static const _socialImages = _images + "social/";
   // static const emailImage = _socialImages + "email.png";
   // static const linkedInImage = _socialImages + "linkedin-logo.png";
   // static const instaImage = _socialImages + "instagram.png";
   // static const githubImage = _socialImages + "github.png";
   // static const mediumImage = _socialImages + "medium.png";
+  static const fiverrImage = _socialImages + "fiverr.png";
 
   static const _techImages = _images + "technology/";
   static const flutterImage = _techImages + "flutter.png";
@@ -50,14 +54,9 @@ class AppConstants {
   static const javascriptImage = _techImages + "javascript.png";
 
   static const _projectsImages = _images + "projects/";
-  static const smartStoreImage = _projectsImages + "1.jpeg";
-  static const crossTheRoadImage = _projectsImages + "2.jpeg";
-  static const newsUpImage = _projectsImages + "3.jpeg";
-  static const musicLabImage = _projectsImages + "4.jpeg";
-  static const personalFaceImage = _projectsImages + "5.jpeg";
-  static const computerStoreImage = _projectsImages + "6.jpeg";
-  static const jsonToDartImage = _projectsImages + "7.png";
-  static const simulationImage = _projectsImages + "8.png";
+  static const dsuImage = _projectsImages + "DSULogo.png";
+  static const kfcImage = _projectsImages + "kfc.png";
+  static const DomImage = _projectsImages + "Dominos.png";
 
   static const _gifs = _outputs + "gif/";
   static const portfolioGif = _gifs + "mobile.gif";
@@ -87,11 +86,11 @@ class AppConstants {
         onTap: () {
           Utilty.openUrl(githubUrl);
         }),
-    NameOnTap(
-        title: "Medium",
-        iconData: FontAwesomeIcons.medium,
-        onTap: () {
-          Utilty.openUrl(mediumUrl);
-        }),
+    // NameOnTap(
+    //     title: "Fiverr",
+    //     widget: SvgPicture.asset(fiverrSvg),
+    //     onTap: () {
+    //       Utilty.openUrl(fiverrUrl);
+    //     }),
   ];
 }

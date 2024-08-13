@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class NameOnTap {
   final String title;
   final IconData? iconData;
+  final Widget? widget;
   final VoidCallback onTap;
   final bool? isDarkTheme;
 
@@ -11,5 +12,6 @@ class NameOnTap {
     required this.onTap,
     this.iconData,
     this.isDarkTheme,
+    this.widget,
   });
 }

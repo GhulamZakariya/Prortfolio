@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_portfolio/core/routes/routes.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
+import 'package:my_portfolio/core/utils/utils.dart';
 import 'package:my_portfolio/models/carousel_item_model.dart';
 import 'package:my_portfolio/provider/theme.dart';
 
@@ -93,8 +92,8 @@ List<CarouselItemModel> carouselItems(
                       ),
                       child: TextButton(
                         onPressed: () {
-                          context.pushNamed(Routes.videoDownloader);
-                          //   Utilty.openUrl(AppConstants.linkedInUrl);
+                          // context.pushNamed(Routes.videoDownloader);
+                          Utilty.openUrl(AppConstants.fiverrUrl);
                         },
                         child: Text(
                           "Let's Talk",

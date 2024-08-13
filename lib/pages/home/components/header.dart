@@ -6,7 +6,6 @@ import 'package:my_portfolio/core/routes/routes.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/globals.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
-import 'package:my_portfolio/core/utils/utils.dart';
 import 'package:my_portfolio/models/header_item.dart';
 import 'package:my_portfolio/provider/home.dart';
 import 'package:my_portfolio/provider/theme.dart';
@@ -89,17 +88,17 @@ class HeaderRow extends StatelessWidget {
           onTap: () {},
           iconData: Icons.contact_mail,
         ),
-        NameOnTap(
-          title: "Blogs",
-          onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
-          },
-          iconData: Icons.article,
-        ),
+        // NameOnTap(
+        //   title: "Blogs",
+        //   onTap: () {
+        //     Utilty.openUrl(AppConstants.mediumUrl);
+        //   },
+        //   iconData: Icons.article,
+        // ),
         NameOnTap(
           title: "Themes",
           onTap: () {
-            Utilty.openUrl(AppConstants.mediumUrl);
+            //  Utilty.openUrl(AppConstants.mediumUrl);
           },
           iconData: Icons.light_mode_outlined,
           isDarkTheme: true,

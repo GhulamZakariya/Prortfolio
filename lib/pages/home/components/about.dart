@@ -58,7 +58,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: 25.0,
                       ),
                       Text(
-                        "I'm Ghulam Zakariya, A Flutter and iOS Developer and Technical Blog Writer",
+                        "I'm Ghulam Zakariya, A Flutter Developer",
                         style: GoogleFonts.josefinSans(
                           fontWeight: FontWeight.bold,
                           height: 1.3,
@@ -69,7 +69,7 @@ class _AboutSectionState extends State<AboutSection> {
                         height: 10.0,
                       ),
                       const Text(
-                        "I have done my Computer Science graduation at Xavier's Institute of Engineering on 2021. I have been developing Mobile Apps for more than 1 years now. I have worked as a Team and as an Indivual in various organization and launched the apps in Playstore as well as in Appstore. In my free time I use to write Technical Blog in Medium. Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
+                        "I have done my Software Engineering graduation at COMSATS University Islambad (Sahiwal Campus) on 2021. I have been developing Mobile Apps for more than 3 years now. I have worked as a Team and as an Indivual in various organization and launched the apps in Playstore as well as in Appstore.Always love to learn new technologies and to succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organisational goals.",
                         style: TextStyle(
                           color: kCaptionColor,
                           height: 1.5,
