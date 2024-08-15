@@ -1,14 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart' as carousel;
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
 import '../../../core/utils/constants.dart';
 import '../../../core/utils/screen_helper.dart';
 import 'carousel_items.dart';
 
 class Carousel extends StatelessWidget {
-  final carousel.CarouselController carouselController =
-      carousel.CarouselController();
+  final CarouselController carouselController = CarouselController();
 
   Carousel({Key? key}) : super(key: key);
   @override
@@ -23,9 +21,9 @@ class Carousel extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            child: carousel.CarouselSlider(
+            child: CarouselSlider(
               carouselController: carouselController,
-              options: carousel.CarouselOptions(
+              options: CarouselOptions(
                 // autoPlay: true,
                 viewportFraction: 1,
                 scrollPhysics: const NeverScrollableScrollPhysics(),
