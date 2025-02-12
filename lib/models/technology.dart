@@ -22,6 +22,5 @@ class TechnologyConstants {
     flutter,
     firebase,
     razorPay,
-    cPlus,
   ];
 }
