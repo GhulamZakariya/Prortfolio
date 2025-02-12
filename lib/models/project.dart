@@ -28,6 +28,31 @@ class ProjectModel {
 
   static List<ProjectModel> projects = [
     ProjectModel(
+      project: "Pizza Hut Qatar",
+      title: "Pizza OrderApp",
+      description:
+          "Developed the Pizza Hut Qatar app using Flutter, delivering a smooth and intuitive ordering experience. Integrated Firebase for authentication and real-time updates. Optimized performance for iOS and Android, ensuring fast loading times and a responsive UI. Implemented features like order tracking, promotions, and location-based services.",
+      appPhotos: AppConstants.pizzaHutQatar,
+      projectLink: "https://apps.apple.com/lb/app/pizza-hut-qatar/id1576164932",
+      techUsed: [
+        TechnologyConstants.flutter,
+        TechnologyConstants.firebase,
+      ],
+    ),
+    ProjectModel(
+      project: "Pizza Hut South Africa",
+      title: "Pizza OrderApp",
+      description:
+          "Developed the Pizza Hut Qatar app using Flutter, delivering a smooth and intuitive ordering experience. Integrated Firebase for authentication and real-time updates. Optimized performance for iOS and Android, ensuring fast loading times and a responsive UI. Implemented features like order tracking, promotions, and location-based services.",
+      appPhotos: AppConstants.pizzaHutSouth,
+      projectLink:
+          "https://apps.apple.com/us/app/pizza-hut-south-africa/id1455306833",
+      techUsed: [
+        TechnologyConstants.flutter,
+        TechnologyConstants.firebase,
+      ],
+    ),
+    ProjectModel(
       project: "DSouF",
       title: "Employee App",
       description:
@@ -37,7 +62,6 @@ class ProjectModel {
       techUsed: [
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
-        TechnologyConstants.cPlus,
       ],
     ),
     ProjectModel(
@@ -50,7 +74,6 @@ class ProjectModel {
       techUsed: [
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
-        TechnologyConstants.cPlus,
       ],
     ),
     ProjectModel(
@@ -64,7 +87,6 @@ class ProjectModel {
       techUsed: [
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
-        TechnologyConstants.cPlus,
       ],
       buttonText: "",
     ),

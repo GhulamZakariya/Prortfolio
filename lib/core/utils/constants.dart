@@ -57,6 +57,8 @@ class AppConstants {
   static const dsuImage = _projectsImages + "DSULogo.png";
   static const kfcImage = _projectsImages + "kfc.png";
   static const DomImage = _projectsImages + "Dominos.png";
+  static const pizzaHutQatar = _projectsImages + "pizzaHutQatar.png";
+  static const pizzaHutSouth = _projectsImages + "pizzaHutSouth.png";
 
   static const _gifs = _outputs + "gif/";
   static const portfolioGif = _gifs + "mobile.gif";
