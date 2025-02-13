@@ -60,6 +60,10 @@ class AppConstants {
   static const pizzaHutQatar = _projectsImages + "pizzaHutQatar.png";
   static const pizzaHutSouth = _projectsImages + "pizzaHutSouth.png";
 
+  static const _appStoresIcons = _projectsImages + 'store_icons/';
+  static const googleAppStore = _appStoresIcons + 'google.png';
+  static const appleAppStore = _appStoresIcons + 'apple.png';
+
   static const _gifs = _outputs + "gif/";
   static const portfolioGif = _gifs + "mobile.gif";
 

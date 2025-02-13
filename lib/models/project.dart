@@ -9,6 +9,8 @@ class ProjectModel {
   final String description;
   final String? appPhotos;
   final String projectLink;
+  final String googleAppLink;
+  final String appleAppLink;
   final bool internalLink;
   final List<TechnologyModel> techUsed;
   List<LinkModel>? links = [];
@@ -20,6 +22,8 @@ class ProjectModel {
     required this.description,
     this.appPhotos,
     required this.projectLink,
+    this.googleAppLink = '',
+    this.appleAppLink = '',
     this.internalLink = false,
     required this.techUsed,
     this.buttonText,
@@ -38,6 +42,10 @@ class ProjectModel {
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
       ],
+      googleAppLink:
+          'https://play.google.com/store/apps/details?id=com.pizzahut.qatar&hl=en',
+      appleAppLink:
+          'https://apps.apple.com/lb/app/pizza-hut-qatar/id1576164932',
     ),
     ProjectModel(
       project: "Pizza Hut South Africa",
@@ -51,6 +59,10 @@ class ProjectModel {
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
       ],
+      googleAppLink:
+          'https://play.google.com/store/apps/details?id=com.pizzahut.rsa&hl=en_ZA',
+      appleAppLink:
+          'https://apps.apple.com/us/app/pizza-hut-south-africa/id1455306833',
     ),
     ProjectModel(
       project: "DSouF",
@@ -75,6 +87,9 @@ class ProjectModel {
         TechnologyConstants.flutter,
         TechnologyConstants.firebase,
       ],
+      googleAppLink:
+          'https://play.google.com/store/apps/details?id=io.bramerz.kfc&hl=en',
+      appleAppLink: 'https://apps.apple.com/us/app/kfc-pakistan/id1480491422',
     ),
     ProjectModel(
       project: "Domino’s Pizza Pakistan",
@@ -89,6 +104,10 @@ class ProjectModel {
         TechnologyConstants.firebase,
       ],
       buttonText: "",
+      googleAppLink:
+          'https://play.google.com/store/apps/details?id=pk.com.dominos&hl=en',
+      appleAppLink:
+          'https://apps.apple.com/pk/app/dominos-pakistan/id1453983132',
     ),
     ProjectModel(
       project: "Flutter",

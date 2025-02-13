@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
+import 'package:my_portfolio/core/utils/utils.dart';
 import 'package:my_portfolio/models/project.dart';
 import 'package:my_portfolio/provider/theme.dart';
 
@@ -122,6 +123,32 @@ class WorkSection extends StatelessWidget {
                                     child: Image.asset(e.logo),
                                   ))
                               .toList(),
+                        ),
+                        Row(
+                          children: [
+                            if (projectModel.googleAppLink.isNotEmpty)
+                              GestureDetector(
+                                onTap: () {
+                                  Utilty.openUrl(projectModel.googleAppLink);
+                                },
+                                child: Image.asset(
+                                  AppConstants.googleAppStore,
+                                  width: 150,
+                                  height: 200,
+                                ),
+                              ),
+                            if (projectModel.appleAppLink.isNotEmpty)
+                              GestureDetector(
+                                onTap: () {
+                                  Utilty.openUrl(projectModel.appleAppLink);
+                                },
+                                child: Image.asset(
+                                  AppConstants.appleAppStore,
+                                  width: 150,
+                                  height: 200,
+                                ),
+                              ),
+                          ],
                         ),
                         // const SizedBox(
                         //   height: 25.0,

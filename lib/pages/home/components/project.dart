@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
@@ -67,7 +66,7 @@ class ProjectSection extends StatelessWidget {
                         child: Image.asset(
                           projectModel.appPhotos!,
                           width: constraints.maxWidth > 720.0 ? null : 350.0,
-                          height: 250,
+                          height: 400,
                         ),
                       ),
 
@@ -141,47 +140,71 @@ class ProjectSection extends StatelessWidget {
                                     ))
                                 .toList(),
                           ),
-                          const SizedBox(
-                            height: 25.0,
-                          ),
+
                           Row(
                             children: [
-                              MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: SizedBox(
-                                  height: 50,
-                                  child: ElevatedButton(
-                                    style: const ButtonStyle(
-                                      backgroundColor: WidgetStatePropertyAll(
-                                        kPrimaryColor,
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      if (projectModel.internalLink) {
-                                        context
-                                            .goNamed(projectModel.projectLink);
-                                      } else {
-                                        Utilty.openUrl(
-                                            projectModel.projectLink);
-                                      }
-                                    },
-                                    child: Center(
-                                      child: Text(
-                                        (projectModel.buttonText ??
-                                                "Explore MORE")
-                                            .toUpperCase(),
-                                        style: TextStyle(
-                                          fontSize: 13.0,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.grey[800],
-                                        ),
-                                      ),
-                                    ),
+                              if (projectModel.googleAppLink.isNotEmpty)
+                                GestureDetector(
+                                  onTap: () {
+                                    Utilty.openUrl(projectModel.googleAppLink);
+                                  },
+                                  child: Image.asset(
+                                    AppConstants.googleAppStore,
+                                    width: 150,
+                                    height: 200,
                                   ),
                                 ),
-                              ),
+                              if (projectModel.appleAppLink.isNotEmpty)
+                                GestureDetector(
+                                  onTap: () {
+                                    Utilty.openUrl(projectModel.appleAppLink);
+                                  },
+                                  child: Image.asset(
+                                    AppConstants.appleAppStore,
+                                    width: 150,
+                                    height: 200,
+                                  ),
+                                ),
                             ],
-                          )
+                          ),
+                          // Row(
+                          //   children: [
+                          //     MouseRegion(
+                          //       cursor: SystemMouseCursors.click,
+                          //       child: SizedBox(
+                          //         height: 50,
+                          //         child: ElevatedButton(
+                          //           style: const ButtonStyle(
+                          //             backgroundColor: WidgetStatePropertyAll(
+                          //               kPrimaryColor,
+                          //             ),
+                          //           ),
+                          //           onPressed: () {
+                          //             if (projectModel.internalLink) {
+                          //               context
+                          //                   .goNamed(projectModel.projectLink);
+                          //             } else {
+                          // Utilty.openUrl(
+                          //     projectModel.projectLink);
+                          //             }
+                          //           },
+                          //           child: Center(
+                          //             child: Text(
+                          //               (projectModel.buttonText ??
+                          //                       "Explore MORE")
+                          //                   .toUpperCase(),
+                          //               style: TextStyle(
+                          //                 fontSize: 13.0,
+                          //                 fontWeight: FontWeight.bold,
+                          //                 color: Colors.grey[800],
+                          //               ),
+                          //             ),
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // )
                         ],
                       ),
                     )
