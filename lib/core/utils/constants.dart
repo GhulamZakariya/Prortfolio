@@ -22,6 +22,8 @@ class AppConstants {
   static const instagramUrl = "https://www.instagram.com/khanzakariya22/";
   static const githubUrl = "https://github.com/GhulamZakariya";
   static const fiverrUrl = "https://www.fiverr.com/gzack22?public_mode=true";
+  static const resumeUrl =
+      "https://raw.githubusercontent.com/GhulamZakariya/Prortfolio/main/assets/images/Ghulam-Zakariya-CV.pdf";
 
   static const _assets = "assets/";
   static const _outputs = "outputs/";
@@ -32,6 +34,8 @@ class AppConstants {
   static const fiverrSvg = _svg + "fiverr.svg";
 
   static const _images = _assets + "images/";
+  static const profileImage = _images + "profile.jpg";
+  static const profileSquareImage = _images + "profile_square.jpg";
 
   static const _socialImages = _images + "social/";
   // static const emailImage = _socialImages + "email.png";
@@ -55,6 +59,7 @@ class AppConstants {
 
   static const _projectsImages = _images + "projects/";
   static const dsuImage = _projectsImages + "DSULogo.png";
+  static const papaJohnsImage = _projectsImages + "papaJohns.png";
   static const kfcImage = _projectsImages + "kfc.png";
   static const DomImage = _projectsImages + "Dominos.png";
   static const pizzaHutQatar = _projectsImages + "pizzaHutQatar.png";

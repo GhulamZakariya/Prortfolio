@@ -1,5 +1,5 @@
 name: my_portfolio
-description: A Dev.
+description: Ghulam Zakariya — premium Flutter developer portfolio (web).
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -28,21 +28,14 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   amplitude_flutter: ^3.16.2
-  animated_theme_switcher: ^2.0.8
-  carousel_slider:
-    git:
-      url: https://github.com/sampaio96/flutter_carousel_slider.git
-      ref: master
   cupertino_icons: ^1.0.2
   device_info_plus: ^9.1.2
   flutter:
     sdk: flutter
-  flutter_html:
-  flutter_riverpod: ^2.4.4
   flutter_svg: ^1.0.3
   font_awesome_flutter: ^10.6.0
   go_router: ^13.2.0
-  google_fonts: ^6.1.0
+  google_fonts: ^8.2.0
   life_from_simple_rules:
     git:
       url: https://github.com/AgnelSelvan/simulation.git
@@ -55,12 +48,29 @@ dependencies:
       path: sand_simulation
       ref: 585f5237d5c5d1a25be9225b112ff94aa3710b40
   url_launcher: ^6.0.20
-  download_assets: ^3.2.0
+
+  # --- Redesign: premium UI/UX + clean-architecture plumbing ---
+  # State management + DI matched to the team's reference app (kfc-mobile-revamp).
+  flutter_bloc: ^9.1.1 # Cubit/state — one cubit per feature
+  get_it: ^9.1.1 # service locator (DI)
+  injectable: ^2.5.1 # annotation-driven DI registration
+  freezed_annotation: ^3.1.0 # immutable entities + sealed states
+  json_annotation: ^4.9.0
+  logger: ^2.4.0 # DebugConsoleAppLogger mixin
+
+  # Premium UI/animations + contact form.
+  flutter_animate: ^4.5.0 # scroll reveals, fades, slide-ups, shimmer
+  visibility_detector: ^0.4.0+2 # trigger reveals when a section enters the viewport
+  http: ^1.2.0 # contact form -> FormSubmit (no backend)
 
 dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.13
+  injectable_generator: ^2.8.1
+  freezed: ^3.2.5
+  json_serializable: ^6.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

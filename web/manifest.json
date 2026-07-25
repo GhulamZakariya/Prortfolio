@@ -1,11 +1,11 @@
 {
-    "name": "my_portfolio",
-    "short_name": "my_portfolio",
+    "name": "Ghulam Zakariya · Flutter Developer",
+    "short_name": "Ghulam Zakariya",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#060D16",
+    "theme_color": "#060D16",
+    "description": "Portfolio of Ghulam Zakariya — Flutter Developer & Software Engineer.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

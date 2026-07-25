@@ -20,6 +20,11 @@
 # is commented out by default.
 #.vscode/
 
+# launch.json holds the real Web3Forms access key (dart-define) — keep it out
+# of git; commit launch.json.example instead.
+.vscode/launch.json
+!.vscode/launch.json.example
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id

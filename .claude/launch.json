@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-web",
+      "runtimeExecutable": "/Users/firefly/Desktop/Zakariya/development/flutter/bin/flutter",
+      "runtimeArgs": [
+        "run",
+        "-d",
+        "web-server",
+        "--web-port",
+        "8099",
+        "--web-hostname",
+        "localhost"
+      ],
+      "port": 8099
+    }
+  ]
+}

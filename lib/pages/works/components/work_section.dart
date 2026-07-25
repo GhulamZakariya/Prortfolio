@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
 import 'package:my_portfolio/core/utils/utils.dart';
 import 'package:my_portfolio/models/project.dart';
-import 'package:my_portfolio/provider/theme.dart';
+import 'package:my_portfolio/presentation/resources/resources.dart';
 
 class WorkSection extends StatelessWidget {
   final List<ProjectModel> projects;
@@ -43,11 +42,11 @@ class WorkSection extends StatelessWidget {
       builder: (context, constraints) {
         return SizedBox(
           width: 400,
-          child: Consumer(builder: (context, ref, _) {
+          child: Builder(builder: (context) {
             return Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                  color: ref.watch(themeProvider).isDarkMode
+                  color: context.colors.isDark
                       ? const Color.fromARGB(75, 12, 12, 7)
                       : Colors.grey[100],
                   borderRadius: BorderRadius.circular(5)),

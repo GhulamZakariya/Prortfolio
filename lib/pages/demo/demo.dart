@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/models/project.dart';
 import 'package:my_portfolio/pages/demo/components/demo_section.dart';
@@ -7,22 +6,19 @@ import 'package:my_portfolio/pages/home/components/footer.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
 import 'package:my_portfolio/widgets/header.dart';
 
-class DemoScreen extends ConsumerStatefulWidget {
+class DemoScreen extends StatefulWidget {
   const DemoScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<DemoScreen> createState() => _DemoScreenState();
+  State<DemoScreen> createState() => _DemoScreenState();
 }
 
-class _DemoScreenState extends ConsumerState<DemoScreen> {
-//   late HomeProvider _homeProvider;
+class _DemoScreenState extends State<DemoScreen> {
   final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
-
-    // _homeProvider = ref.read(homeProvider);
   }
 
   Widget _buildPage() {

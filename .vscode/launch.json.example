@@ -1,0 +1,16 @@
+{
+    // Template. Copy to `launch.json` and fill in your real Web3Forms access
+    // key. `launch.json` is gitignored so the key is never committed.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Prortfolio",
+            "request": "launch",
+            "type": "dart",
+            "toolArgs": [
+                "--dart-define",
+                "web3forms_access_key=YOUR_WEB3FORMS_ACCESS_KEY"
+            ]
+        }
+    ]
+}

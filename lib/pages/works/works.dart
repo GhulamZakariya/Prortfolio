@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_portfolio/models/project.dart';
 import 'package:my_portfolio/pages/home/components/footer.dart';
@@ -7,14 +6,14 @@ import 'package:my_portfolio/pages/works/components/work_section.dart';
 import 'package:my_portfolio/core/utils/screen_helper.dart';
 import 'package:my_portfolio/widgets/header.dart';
 
-class MyWorksScreen extends ConsumerStatefulWidget {
+class MyWorksScreen extends StatefulWidget {
   const MyWorksScreen({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<MyWorksScreen> createState() => _DemoScreenState();
+  State<MyWorksScreen> createState() => _DemoScreenState();
 }
 
-class _DemoScreenState extends ConsumerState<MyWorksScreen> {
+class _DemoScreenState extends State<MyWorksScreen> {
   final ScrollController scrollController = ScrollController();
 
   @override

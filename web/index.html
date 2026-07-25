@@ -18,74 +18,170 @@
 
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="theme-color" content="#060D16" />
+
+    <!-- Primary SEO -->
+    <meta
+      name="description"
+      content="Ghulam Zakariya — Flutter Developer & Software Engineer from Lahore, Pakistan. 3+ years building and shipping cross-platform mobile apps for global brands like Pizza Hut, KFC and Domino's."
+    />
+    <meta
+      name="keywords"
+      content="Ghulam Zakariya, Flutter Developer, Mobile App Developer, Software Engineer, Dart, Firebase, iOS, Android, Lahore, Pakistan, Portfolio"
+    />
+    <meta name="author" content="Ghulam Zakariya" />
+    <link rel="canonical" href="https://www.agnelselvan.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ghulam Zakariya · Flutter Developer" />
+    <meta
+      property="og:description"
+      content="Flutter Developer & Software Engineer crafting fast, elegant cross-platform apps. 3+ years shipping production apps for global brands."
+    />
+    <meta property="og:image" content="icons/Icon-512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ghulam Zakariya · Flutter Developer" />
+    <meta
+      name="twitter:description"
+      content="Flutter Developer & Software Engineer crafting fast, elegant cross-platform apps."
+    />
+    <meta name="twitter:image" content="icons/Icon-512.png" />
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="my_portfolio" />
+    <meta name="apple-mobile-web-app-title" content="Ghulam Zakariya" />
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>Ghulam Zakariya</title>
+    <!-- Structured data for rich search results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ghulam Zakariya",
+        "jobTitle": "Flutter Developer",
+        "description": "Flutter Developer & Software Engineer building cross-platform mobile apps.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lahore",
+          "addressCountry": "Pakistan"
+        },
+        "email": "khanzakariya22@gmail.com",
+        "sameAs": [
+          "https://github.com/GhulamZakariya",
+          "https://www.linkedin.com/in/ghulamzakariya-flutterdeveloper/"
+        ]
+      }
+    </script>
+
+    <title>Ghulam Zakariya · Flutter Developer</title>
     <link rel="manifest" href="manifest.json" />
     <style>
+      html,
       body {
-        background-color: rgba(7, 17, 26, 1);
+        margin: 0;
+        height: 100%;
+        background-color: #060d16;
       }
 
-      .loading {
+      #loading {
+        position: fixed;
+        inset: 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0;
+        gap: 22px;
+        background: #060d16;
+        transition: opacity 0.5s ease;
+        z-index: 9999;
+      }
+
+      #loading.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .brand-mark {
+        width: 74px;
+        height: 74px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 800;
+        font-size: 26px;
+        color: #1a1400;
+        background: linear-gradient(135deg, #ffe566, #ffd800, #ffb300);
+        box-shadow: 0 10px 40px rgba(255, 216, 0, 0.35);
+        animation: pulse 1.6s ease-in-out infinite;
+      }
+
+      .brand-ring {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
-
-      .loader {
-        border: 10px solid #f3f3f3;
+        width: 110px;
+        height: 110px;
         border-radius: 50%;
-        border: 10px solid;
-        border-top: 10px solid #ffd800;
-        border-right: 10px solid rgba(7, 17, 26, 1);
-        border-bottom: 10px solid #ffd800;
-        border-left: 10px solid rgba(7, 17, 26, 1);
-        width: 70px;
-        height: 70px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
+        border: 3px solid transparent;
+        border-top-color: #ffd800;
+        border-right-color: rgba(255, 216, 0, 0.2);
+        animation: spin 1s linear infinite;
       }
 
-      @-webkit-keyframes spin {
-        0% {
-          -webkit-transform: rotate(0deg);
-        }
-        100% {
-          -webkit-transform: rotate(360deg);
-        }
+      .loading-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #a6b1bb;
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
       }
 
       @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
+        to {
           transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="loading">
-      <div class="loader"></div>
+    <div id="loading">
+      <div style="position: relative; display: flex; align-items: center; justify-content: center">
+        <div class="brand-ring"></div>
+        <div class="brand-mark">GZ</div>
+      </div>
+      <div class="loading-text">Ghulam Zakariya</div>
     </div>
+    <script>
+      // Hide the loader once Flutter paints its first frame.
+      window.addEventListener("flutter-first-frame", function () {
+        var el = document.getElementById("loading");
+        if (el) {
+          el.classList.add("hide");
+          setTimeout(function () {
+            el.remove();
+          }, 600);
+        }
+      });
+    </script>
     <script type="text/javascript" defer>
       (function (e, t) {
         var n = e.amplitude || {

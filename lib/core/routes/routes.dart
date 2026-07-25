@@ -3,10 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:life_from_simple_rules/screens/home.dart';
 import 'package:my_portfolio/core/utils/constants.dart';
 import 'package:my_portfolio/pages/demo/demo.dart';
-import 'package:my_portfolio/pages/home/home.dart';
-import 'package:my_portfolio/pages/json_to_dart/json_to_dart.dart';
+import 'package:my_portfolio/presentation/features/json_to_dart/json_to_dart_page.dart';
 import 'package:my_portfolio/pages/video_downloader/video_downloader.dart';
 import 'package:my_portfolio/pages/works/works.dart';
+import 'package:my_portfolio/presentation/features/home/home_page.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sand_simulation/home.dart';
 
@@ -25,9 +25,7 @@ class RouterGenerator {
     routes: [
       GoRoute(
         path: Routes.initial,
-        builder: (context, state) => const _AppResponsiveBuilder(
-          child: Home(),
-        ),
+        builder: (context, state) => const HomePage(),
         routes: [
           GoRoute(
             path: Routes.demos,
