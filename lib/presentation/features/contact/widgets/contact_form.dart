@@ -47,6 +47,15 @@ class _ContactFormState extends State<ContactForm> {
         );
   }
 
+  void _reset() {
+    _formKey.currentState?.reset();
+    _name.clear();
+    _email.clear();
+    _subject.clear();
+    _message.clear();
+    context.read<ContactCubit>().reset();
+  }
+
   String? _required(String? v, String field) =>
       (v == null || v.trim().isEmpty) ? 'Please enter your $field' : null;
 
@@ -60,18 +69,16 @@ class _ContactFormState extends State<ContactForm> {
   Widget build(BuildContext context) {
     return GlassCard(
       padding: const EdgeInsets.all(AppDimensions.spaceXl),
-      child: BlocConsumer<ContactCubit, ContactState>(
-        listener: (context, state) {
-          if (state.submitStatus.isSuccess) {
-            _formKey.currentState?.reset();
-            _name.clear();
-            _email.clear();
-            _subject.clear();
-            _message.clear();
-          }
-        },
+      child: BlocBuilder<ContactCubit, ContactState>(
         builder: (context, state) {
           final status = state.submitStatus;
+
+          // On success, swap the whole form for a clean confirmation — avoids
+          // showing empty fields with stray validation errors.
+          if (status.isSuccess) {
+            return _SuccessState(onSendAnother: _reset);
+          }
+
           return Form(
             key: _formKey,
             child: Column(
@@ -114,36 +121,84 @@ class _ContactFormState extends State<ContactForm> {
                   maxLines: 5,
                   validator: (v) => _required(v, 'message'),
                 ),
-                const SizedBox(height: AppDimensions.spaceLg),
-                if (status.isSuccess)
-                  _Banner(
-                    icon: Icons.check_circle_rounded,
-                    color: context.colors.success,
-                    message:
-                        "Thanks! Your message is on its way — I'll get back to you soon.",
-                  )
-                else if (status.isFailure)
+                if (status.isFailure) ...[
+                  const SizedBox(height: AppDimensions.spaceLg),
                   _Banner(
                     icon: Icons.error_outline_rounded,
                     color: context.colors.danger,
                     message: (status as Failure).error.message,
                   ),
-                if (status.isSuccess || status.isFailure)
-                  const SizedBox(height: AppDimensions.spaceMd),
+                ],
+                const SizedBox(height: AppDimensions.spaceLg),
                 AppButton(
-                  label: status.isSuccess ? 'Send another' : 'Send message',
+                  label: 'Send message',
                   icon: Icons.send_rounded,
                   expand: true,
                   loading: status.isLoading,
-                  onPressed: status.isSuccess
-                      ? () => context.read<ContactCubit>().reset()
-                      : _submit,
+                  onPressed: _submit,
                 ),
               ],
             ),
           );
         },
       ),
+    );
+  }
+}
+
+/// Shown in place of the form after a successful submission.
+class _SuccessState extends StatelessWidget {
+  const _SuccessState({required this.onSendAnother});
+  final VoidCallback onSendAnother;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = context.colors;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Center(
+          child: Container(
+            width: 72,
+            height: 72,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: colors.success.withValues(alpha: 0.12),
+              border: Border.all(color: colors.success.withValues(alpha: 0.35)),
+            ),
+            child: Icon(Icons.check_circle_rounded,
+                color: colors.success, size: 40),
+          ),
+        ),
+        AppDimensions.spaceLg.vertical,
+        Center(
+          child: Text('Message sent!',
+              style:
+                  AppTextStyles.heading(24).copyWith(color: colors.textPrimary)),
+        ),
+        AppDimensions.spaceXs.vertical,
+        Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 360),
+            child: Text(
+              "Thanks for reaching out — your message is on its way and I'll get "
+              'back to you soon.',
+              textAlign: TextAlign.center,
+              style: context.textTheme.bodyMedium
+                  ?.copyWith(color: colors.textSecondary),
+            ),
+          ),
+        ),
+        AppDimensions.spaceLg.vertical,
+        AppButton(
+          label: 'Send another message',
+          icon: Icons.refresh_rounded,
+          variant: AppButtonVariant.outline,
+          expand: true,
+          onPressed: onSendAnother,
+        ),
+      ],
     );
   }
 }

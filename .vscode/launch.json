@@ -8,8 +8,7 @@
             "request": "launch",
             "type": "dart",
             "toolArgs": [
-                "--dart-define",
-                "web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
+                "--dart-define=web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
             ]
         },
         {
@@ -18,8 +17,7 @@
             "type": "dart",
             "flutterMode": "profile",
             "toolArgs": [
-                "--dart-define",
-                "web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
+                "--dart-define=web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
             ]
         },
         {
@@ -28,8 +26,7 @@
             "type": "dart",
             "flutterMode": "release",
             "toolArgs": [
-                "--dart-define",
-                "web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
+                "--dart-define=web3forms_access_key=5756fa11-42d5-4826-9760-9d59cc3fa6d8"
             ]
         }
     ]
