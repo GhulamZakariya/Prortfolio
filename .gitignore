@@ -30,8 +30,10 @@
 .pub-cache/
 .pub/
 /build/
+/android/app/.cxx/
 
 # Web related
+lib/generated_plugin_registrant.dart
 
 # Symbolication related
 app.*.symbols
@@ -39,10 +41,21 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Flutter code generation
+*.freezed.dart
+*.g.dart
+nstack.dart
+*.gr.dart
+*.config.dart
+lib/gen/**
 
-# Environment File
-/env.json
+# macOS/Linux ephemeral (Flutter-generated)
+macos/Flutter/ephemeral/
+linux/flutter/ephemeral/
+/ios/build/
+
+
+# Dependencies
+**.lock
+
+.codegpt
